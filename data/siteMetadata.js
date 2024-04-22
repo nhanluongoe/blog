@@ -10,7 +10,6 @@ const siteMetadata = {
   siteRepo: 'https://github.com/nhanluongoe/blog',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
-  mastodon: 'https://mastodon.social/@mastodonuser',
   email: 'nhanlt18@gmail.com',
   github: 'https://github.com/nhanluongoe',
   linkedin: 'https://www.linkedin.com/nhanlt18',
