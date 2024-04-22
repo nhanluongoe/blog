@@ -1,6 +1,6 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Nhan Luong',
+  title: 'Nhan Luong - Thoughts and Shares about Software Engineering',
   author: 'Nhan Luong',
   headerTitle: 'Nhan Luong',
   description: 'Thoughts and logs of a software engineer',
