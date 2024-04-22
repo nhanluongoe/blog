@@ -3,7 +3,7 @@ title: 'Popular rendering patterns - Part 1'
 date: '2024-04-22'
 tags: ['rendering pattern']
 draft: false
-summary: 'Look into CSR, SSR, and SSG rendering patterns in web development.'
+summary: 'Look into CSR, SSR, and Traditional SSG rendering patterns in web development.'
 ---
 
 For the first part of this series, we will look into three popular rendering patterns in web development:
@@ -56,3 +56,22 @@ SSG is a rendering pattern where the HTML pages are generated at build time. The
 - Building a blog or a website with static content.
 - SEO is a critical factor.
 - Doesn't require rich user interaction.
+
+# Traditional SSR
+
+Traditional SSR is a variation of SSG rendering pattern where the server generates HTML pages on each request. The server is responsible for generating the HTML pages and serving them to the client.
+
+<p align="center">![SSR Sequence Diagram](/static/images/blog/ssr-sequence-diagram.png)</p>
+
+## Pros
+
+- SEO-friendly because the content is generated on the server.
+
+## Cons
+
+- Slow load time and navigation because the server needs to generate the HTML pages on each request.
+- High server load because the server needs to generate the HTML pages on each request in case of high traffic.
+
+## When to use
+
+- Building web applications with dynamic content while remaining SEO-friendly.
