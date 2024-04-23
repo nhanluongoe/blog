@@ -1,0 +1,61 @@
+---
+title: 'Popular rendering patterns - Part 2'
+date: '2024-04-23'
+tags: ['rendering pattern']
+draft: false
+summary: 'Look into some hybrid rendering patterns such as ISR, PH and SH'
+---
+
+In the [first part](/blog/rendering-patterns) of this series, we looked into three popular rendering patterns in web development: Client-Side Rendering (CSR), Server-Side Rendering (SSR), and Static Site Generation (SSG). In this part, we will look into some hybrid rendering patterns that combine the benefits of both client-side and server-side rendering: Icremental Static Regeneration (ISR), Progressive Hydration (PH) and Selective Hydration (SH).
+
+# ISR 
+
+ISR is a hybrid rendering pattern that combines the benefits of SSG and SSR. In ISR, some specific HTML pages are generated at build time like SSG, but the server can regenerate the dynamic pages on-demand when user requests them. The server can revalidate the data and regenerate the page when a request is made. This allows the server to serve the latest content to the client without rebuilding the entire site.
+
+### Revalidate after a specific time
+
+<p align="center">![ISR Sequence Diagram](/static/images/blog/isr-sequence-diagram-1.png)</p>
+
+{/* title Incremental Static Regeneration
+participant Client
+participant Server
+Server->Server: Generate "/posts" at build time
+note right of Server:Revalidate time: 10 min
+Client->Server: GET /posts
+Server-->Client: HTML pre-rendered "/posts"
+note left of Client:Request after 10 min
+Client->Server: GET /posts
+Server->Server: Regenerate "/posts"
+Server-->Client: HTML new regenerated "/posts" */}
+
+### Revalidate on demand 
+
+<p align="center">![ISR Sequence Diagram](/static/images/blog/isr-sequence-diagram-2.png)</p>
+
+{/* title Incremental Static Regeneration
+participant Client
+participant Server
+Server->Server: Generate "/posts" at build time
+Client->Server: GET /posts
+Server-->Client: HTML pre-rendered "/posts"
+]->Server: POST /api/revalidate/posts
+Server->Server: Regenerate "/posts"
+Client->Server: GET /posts
+Server-->Client: HTML new regenerated "/posts" */}
+
+## Pros
+
+ISR provides pros of SSG and:
+
+- Be able to serve dynamic data without trigger a rebuild.
+
+## Cons
+
+- The content is not always up-to-date.
+- Need a dedicated server.
+
+## When to use
+
+- Building a not-so-dynamic content website.
+
+
