@@ -94,3 +94,22 @@ Client->Client: Attach handler */}
 ## When to use
 
 - Building a web application where some part of the page is more important to the users than others so we can prioritize the hydration of those parts.
+
+# SH
+
+In PH, the browser needs the entire markup to be able to render the page and start progressive hydration. If some part of the markup depend on the external data, the other part of the HTML will be blocked until the data is fetched. SH addresses this issue by allowing streaming the HTML to the browser and get it hydrated as soon as possible without having to wait for the entire markup to be ready.
+
+<p>![SH Sequence Diagram](/static/images/blog/sh-sequence-diagram.png)</p>
+
+{/* title Selective Hydration
+participant Client
+participant Server
+Client->Server: GET /posts
+Server->Server: Generate "Post list" markup
+Server-->Client: "Post list" markup
+Server-->Client: Javascript chunk (onClick)
+Client->Client: Attach handler
+Server->Server: Generate "Comments" markup
+Server-->Client: "Comments" markup
+Server-->Client: Javascript chunk (onMouseMove)
+Client->Client: Attach handler */}
