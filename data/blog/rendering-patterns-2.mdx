@@ -71,8 +71,8 @@ Compare to SSR, Javascript bundles are loaded once which may cause bad user expe
 participant Client
 participant Server
 Client->Server: GET /
+Server->Server: Generate entire markup
 Server-->Client: Markup HTML/CSS
-Client->Client: Render page
 Server-->Client: Javascript chunk (onClick)
 Client->Client: Attach handler
 Server-->Client: Javascript chunk (onMouseMove)
@@ -113,3 +113,12 @@ Server->Server: Generate "Comments" markup
 Server-->Client: "Comments" markup
 Server-->Client: Javascript chunk (onMouseMove)
 Client->Client: Attach handler */}
+
+## Pros and cons
+
+- Same as PH but being able to avoid blocking the entire page rendering.
+- User can interact with the page before all the components are hydrated.
+
+## When to use
+
+- Can be used for almost any web application.
