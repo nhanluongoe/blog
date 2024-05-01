@@ -18,6 +18,11 @@ CSR is the most common rendering pattern in modern web development. In CSR, the 
 
 <p align="center">![CSR Sequence Diagram](/static/images/blog/csr-sequence-diagram.png)</p>
 
+{/* title Client-Side Rendering
+Client->Server: GET /api/products?page=1
+Server-->Client: JSON list of products
+Client->Client: Render list of products */}
+
 ## Pros
 
 - Fast navigation between pages without a page fresh.
@@ -40,6 +45,13 @@ CSR is the most common rendering pattern in modern web development. In CSR, the 
 SSG is a rendering pattern where the HTML pages are generated at build time. The server generates the HTML pages for all the routes in the application during the build process. The generated HTML pages are then served to the client when requested. The content is static and does not change until the next build.
 
 <p align="center">![SSG Sequence Diagram](/static/images/blog/ssg-sequence-diagram.png)</p>
+
+{/* title Static Site Generation
+participant Client
+participant Server
+Server->Server: Generate HTML at build time
+Client->Server: GET /products?page=1
+Server-->Client: HTML list of products */}
 
 ## Pros
 
@@ -65,6 +77,13 @@ SSG is a rendering pattern where the HTML pages are generated at build time. The
 Traditional SSR is a variation of SSG rendering pattern where the server generates HTML pages on each request. The server is responsible for generating the HTML pages and serving them to the client.
 
 <p align="center">![SSR Sequence Diagram](/static/images/blog/ssr-sequence-diagram.png)</p>
+
+{/* title Server-Side Rendering
+participant Client
+participant Server
+Client->Server: GET /products?page=1
+Server->Server: Generate HTML
+Server-->Client: HTML list of products */}
 
 ## Pros
 
