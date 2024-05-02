@@ -6,7 +6,7 @@ const siteMetadata = {
   description: 'Thoughts and logs of a software engineer',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://nhanluongoe.me',
+  siteUrl: 'https://nhanluong.dev',
   siteRepo: 'https://github.com/nhanluongoe/blog',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
