@@ -12,7 +12,7 @@ const Card = async ({ title, description, href, year, repo }) => {
       <div className="overflow-hidden rounded-md border border-gray-200 border-opacity-60 bg-gray-50 dark:border-gray-900 dark:bg-gray-950">
         <div className="p-3">
           <div className="flex justify-between pb-2">
-            <div className="text-accent-500">{year}</div>
+            <time className="text-accent-500">{year}</time>
             <div>
               <span className="text-gray-900 dark:text-gray-300">{numOfStars}</span> ⭐️
             </div>

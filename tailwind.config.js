@@ -13,6 +13,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        ibm: ['var(--font-ibm-plex-mono)'],
+      },
       colors: {
         ...customerColors,
       },
