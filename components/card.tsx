@@ -13,8 +13,8 @@ const Card = async ({ title, description, href, year, repo }) => {
         <div className="p-3">
           <div className="flex justify-between pb-2">
             <time className="text-accent-500">{year}</time>
-            <div>
-              <span className="text-gray-900 dark:text-gray-300">{numOfStars}</span> ⭐️
+            <div className="font-ibm">
+              <span className="mr-1 text-gray-900 dark:text-gray-300">{numOfStars}</span>⭐️
             </div>
           </div>
           <h2 className="mb-2 text-2xl font-bold leading-5 tracking-tight">
@@ -27,15 +27,24 @@ const Card = async ({ title, description, href, year, repo }) => {
             )}
           </h2>
           <p className="prose mb-3 max-w-none text-gray-900 dark:text-gray-300">{description}</p>
-          {href && (
+          <div className="flex gap-3">
             <Link
-              href={href}
-              className="rounded-lg border border-gray-200 px-2 py-1 font-medium leading-6 hover:border-gray-900 dark:border-gray-900 dark:hover:border-gray-200"
+              href={`https://github.com/nhanluongoe/${repo}`}
+              className="rounded-lg border border-gray-200 px-2 py-1 font-medium leading-6 hover:border-gray-900 dark:border-gray-800 dark:bg-gray-900 dark:hover:border-gray-200"
               aria-label={`Link to ${title}`}
             >
-              Demo
+              Source
             </Link>
-          )}
+            {href && (
+              <Link
+                href={href}
+                className="rounded-lg border border-gray-200 px-2 py-1 font-medium leading-6 hover:border-gray-900 dark:border-gray-800 dark:bg-gray-900 dark:hover:border-gray-200"
+                aria-label={`Link to ${title}`}
+              >
+                Demo
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </div>
