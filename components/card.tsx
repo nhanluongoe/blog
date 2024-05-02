@@ -8,14 +8,16 @@ const Card = async ({ title, description, href, year, repo }) => {
   ).json()
 
   return (
-    <div className="md max-w-[544px] p-4 md:w-1/2">
-      <div className="overflow-hidden rounded-md border border-gray-200 border-opacity-60 bg-gray-50 dark:border-gray-900 dark:bg-gray-950">
-        <div className="p-3">
+    <div className="flex-1 p-4">
+      <div className="flex h-full flex-col justify-between overflow-hidden rounded-md border border-gray-200 border-opacity-60 bg-gray-50 p-3 dark:border-gray-900 dark:bg-gray-950">
+        <div>
           <div className="flex justify-between pb-2">
             <time className="text-accent-500">{year}</time>
-            <div className="font-ibm">
-              <span className="mr-1 text-gray-900 dark:text-gray-300">{numOfStars}</span>⭐️
-            </div>
+            {!!numOfStars && (
+              <div className="font-ibm">
+                <span className="mr-1 text-gray-900 dark:text-gray-300">{numOfStars}</span>⭐️
+              </div>
+            )}
           </div>
           <h2 className="mb-2 text-2xl font-bold leading-5 tracking-tight">
             {href ? (
@@ -26,6 +28,8 @@ const Card = async ({ title, description, href, year, repo }) => {
               title
             )}
           </h2>
+        </div>
+        <div className="flex flex-grow flex-col justify-between">
           <p className="prose mb-3 max-w-none text-gray-900 dark:text-gray-300">{description}</p>
           <div className="flex gap-3">
             <Link
