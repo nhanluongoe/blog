@@ -9,7 +9,7 @@ const siteMetadata = {
   siteUrl: 'https://nhanluong.dev',
   siteRepo: 'https://github.com/nhanluongoe/blog',
   siteLogo: '/static/images/logo.png',
-  socialBanner: '/static/images/twitter-card.png',
+  socialBanner: '/static/images/logo.png',
   email: 'nhanlt18@gmail.com',
   github: 'https://github.com/nhanluongoe',
   linkedin: 'https://www.linkedin.com/nhanlt18',
