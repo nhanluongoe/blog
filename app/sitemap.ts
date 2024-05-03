@@ -10,11 +10,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .map((post) => ({
       url: `${siteUrl}/${post.path}`,
       lastModified: post.lastmod || post.date,
+      changeFrequency: 'daily' as const,
     }))
 
-  const routes = ['', 'blog', 'projects', 'tags'].map((route) => ({
+  const routes = ['', 'blog', 'projects', 'about'].map((route) => ({
     url: `${siteUrl}/${route}`,
-    lastModified: new Date().toISOString().split('T')[0],
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
   }))
 
   return [...routes, ...blogRoutes]
