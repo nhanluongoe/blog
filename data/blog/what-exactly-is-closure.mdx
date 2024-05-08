@@ -88,5 +88,5 @@ Let's give it a try and see if you can guess the output.
 
 The output will be: `1 2 1`. If you guessed it right, congratulations! If not, don't worry, it's a bit tricky.
 
-When the `outer` function is called, the closure is created for both `firstInner` and `secondInner` functions. Even though they share the same closure but at the time of closure creation, the `secondCount` variable is assigned the value of `firstCount` which is `0`. So, when the `secondIncrement` function is called, it increments the `secondCount` variable from `0` to `1`.  
+When the `outer` function is called, the closure is created for both `firstInner` and `secondInner` functions. Even though they share the same closure but at the time of closure creation, the `secondCount` variable is assigned the value of `firstCount` which is `0`. So, when the `secondIncrement` function is called, it increments the `secondCount` variable from `0` to `1` instead of `2` to `3`. 
 
