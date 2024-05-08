@@ -1,0 +1,92 @@
+---
+title: 'What exactly is closure?'
+date: '2024-05-08'
+tags: ['javascript']
+draft: false
+summary: 'A glimpse into the concept of closure in Javascript.'
+---
+
+You might have heard the term "closure" or being asked about it in a job interview. But what exactly is closure? What is it used for and how does it work? In this article, we'll take a look at the concept of closure in Javascript.
+
+## What is closure?
+
+Based on the definition from [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
+> a closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In Javascript, closures are created every time a function is created, at function creation time.
+
+## How does it work?
+
+Okay, let's break it down. For the first part of the definition, it's pretty straightforward that an inner function has access to the variables of the outer function.
+
+```js
+const outer = () => {
+  const message = 'Hello, ';
+  const inner = () => {
+    console.log(message + 'world!');
+  }
+  return inner;
+}
+
+const inner = outer();
+inner(); // Hello, world!
+```
+
+In the given example, the `inner` function has access to the `message` variable from the `outer` function. This is because the `inner` function is created inside the `outer` function and it has access to the variables of the `outer` function.
+
+For the second part, it says that closures are created every time a function is created. This means that every time you create a function, a closure is created along with it.
+
+```js
+const outer = () => {
+  let count = 0;
+  return () => {
+    count++;
+    console.log(count);
+  }
+}
+
+const firstIncrement = outer();
+const secondIncrement = outer();
+
+firstIncrement(); // 1
+firstIncrement(); // 2
+SecondIncrement(); // 1 
+```
+
+In this example, we have two closures created by calling the `outer` function twice. Each closure has its own `count` variable that is independent of each other. 
+
+Could you guess the output of the following example?
+
+```js
+function outer() {
+  let firstCount = 0;
+
+  function firstInner() {
+    firstCount++;
+    console.log(firstCount);
+  }
+
+  let secondCount = firstCount;
+
+  function secondInner() {
+    secondCount++;
+    console.log(secondCount);
+  }
+
+  return [firstInner, secondInner];
+}
+
+const [firstIncrement, secondIncrement] = outer();
+firstIncrement();
+firstIncrement();
+secondIncrement();
+```
+
+Let's give it a try and see if you can guess the output.
+
+.
+.
+.
+
+The output will be: `1 2 1`. If you guessed it right, congratulations! If not, don't worry, it's a bit tricky.
+
+When the `outer` function is called, the closure is created for both `firstInner` and `secondInner` functions. Even though they share the same closure but at the time of closure creation, the `secondCount` variable is assigned the value of `firstCount` which is `0`. So, when the `secondIncrement` function is called, it increments the `secondCount` variable from `0` to `1`.  
+
