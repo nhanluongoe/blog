@@ -1,0 +1,38 @@
+---
+title: 'Understanding uncommon React hooks: useLayoutEffect (1)'
+date: '2024-05-10'
+tags: ['react']
+draft: false
+summary: 'Lets dig into the useLayoutEffect hook in React and see how it differs from useEffect.'
+---
+
+In React, we have a set of built-in hooks that allow us to add features to our functional components. There're some common hooks that are very straightforward to use such as `useState`, `useEffect`, etc. However, there're also some uncommon hooks that are not used as often as the common ones but it comes very handy in some specific cases. In this series of blog posts, I want to dig into some of these uncommon hooks and explain how they work and where they can be useful.
+
+In this first post, we'll take a look at the `useLayoutEffect` hook.
+
+## What is `useLayoutEffect`?
+
+Based on the definition from the [React documentation](https://react.dev/reference/react/useLayoutEffect):
+
+> `useLayoutEffect` is a version of `useEffect` that fires before the browser repains the screen.
+
+## How `useLayoutEffect` works?
+
+To understand how it works. Let's take a look at the rendering process in React.
+
+In React, any screen update happens in three steps:
+
+- Triggering a render
+- Rendering the component
+- Commit the changes to the DOM
+
+![React rendering process](/static/images/blog/react-rendering-process.png)
+
+When you use the `useEffect` hook, the effect function is called after the browser has painted the screen but for the `useLayoutEffect` hook, the effect function is called before the browser paints the screen.
+
+![useEffect vs useLayoutEffect](/static/images/blog/useeffect-uselayouteffect.png)
+
+
+## When to use `useLayoutEffect`?
+
+The `useLayoutEffect` hook is useful when you need to perform some DOM manipulations that need to happen before the browser paints the screen. For example, you might want to measure the size of an element before it's render on the screen.
