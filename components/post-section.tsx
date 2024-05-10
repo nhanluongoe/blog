@@ -17,12 +17,12 @@ export default function PostSection(props: PostSectionProps) {
         Latest Posts
       </h1>
 
-      <ul className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-3">
+      <div className="grid grid-cols-1 gap-2 md:gap-3">
         {!posts.length && 'No posts found.'}
         {posts.slice(0, MAX_DISPLAY).map((post) => {
           return <PostCard key={post.slug} post={post} />
         })}
-      </ul>
+      </div>
       {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
