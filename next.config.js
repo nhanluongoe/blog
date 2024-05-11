@@ -1,4 +1,5 @@
 const { withContentlayer } = require('next-contentlayer')
+const { withHydrationOverlay } = require('@builder.io/react-hydration-overlay/next')
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
@@ -57,7 +58,10 @@ const securityHeaders = [
 /**
  * @type {import('next/dist/next-server/server/config').NextConfig}
  **/
-module.exports = () => {
+
+module.exports = withHydrationOverlay({
+  appRootSelector: 'main',
+})(() => {
   const plugins = [withContentlayer, withBundleAnalyzer]
   return plugins.reduce((acc, next) => next(acc), {
     reactStrictMode: true,
@@ -90,4 +94,4 @@ module.exports = () => {
       return config
     },
   })
-}
+})
