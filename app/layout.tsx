@@ -10,7 +10,6 @@ import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 import { Toaster } from 'react-stacked-toast'
-import { HydrationOverlay } from '@builder.io/react-hydration-overlay'
 
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -88,9 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
                 <Toaster />
                 <Header />
-                <main className="mb-auto">
-                  <HydrationOverlay>{children}</HydrationOverlay>
-                </main>
+                <main className="mb-auto">{children}</main>
               </SearchProvider>
               <Footer />
             </div>
