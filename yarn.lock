@@ -8964,7 +8964,7 @@ __metadata:
     prism-react-renderer: ^2.3.1
     react: 18.2.0
     react-dom: 18.2.0
-    react-stacked-toast: 0.0.8
+    react-stacked-toast: 1.0.0
     reading-time: 1.5.0
     rehype-autolink-headings: ^6.1.0
     rehype-citation: ^1.0.2
@@ -9826,16 +9826,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-stacked-toast@npm:0.0.8":
-  version: 0.0.8
-  resolution: "react-stacked-toast@npm:0.0.8"
+"react-stacked-toast@npm:1.0.0":
+  version: 1.0.0
+  resolution: "react-stacked-toast@npm:1.0.0"
   dependencies:
     "@emotion/react": ^11.11.3
     "@emotion/styled": ^11.11.0
   peerDependencies:
     react: ">=17"
     react-dom: ">=17"
-  checksum: f39f2d60e5d7cdd948e31a2d0a37a22f419f4f050f04586fbaaac1406d95eeaa19ddb3f0b3c7e85c2fcc42b6cdc3e05914d261cd77820a2039bc2e557d7fb87a
+  checksum: 4c94600b243dc009def55e2a9d45635149c43c4d3868d8a6403e0d3aa95d157e0c133da95ef950d70894da656fa4e8bb90a7bd3e850fcb9b7df3a35bd784a9a7
   languageName: node
   linkType: hard
 
