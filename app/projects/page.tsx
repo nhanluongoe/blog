@@ -9,12 +9,12 @@ export default function Projects() {
     <>
       <div className="">
         <div className="space-y-2 md:space-y-5">
-          <h1 className="md:leading-14 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10">
+          <h1 className="md:leading-14 text-xl leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10 md:text-3xl">
             Projects
           </h1>
         </div>
-        <div className="container py-8">
-          <div className="-m-4 flex flex-wrap items-stretch">
+        <div className="container py-2 md:py-8">
+          <div className="-m-4 grid grid-cols-1 flex-wrap items-stretch md:grid-cols-2">
             {projectsData.map((d) => (
               <Card
                 key={d.title}

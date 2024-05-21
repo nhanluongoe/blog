@@ -8,7 +8,7 @@ const Card = async ({ title, description, href, year, repo }) => {
   ).json()
 
   return (
-    <div className="flex-1 p-4">
+    <div className="flex-1 p-4 transition-transform duration-300 hover:scale-[1.02]">
       <div className="flex h-full flex-col justify-between overflow-hidden rounded-md border border-gray-200 border-opacity-60 bg-gray-50 p-3 dark:border-gray-900 dark:bg-gray-950">
         <div>
           <div className="flex justify-between pb-2">
@@ -19,7 +19,7 @@ const Card = async ({ title, description, href, year, repo }) => {
               </div>
             )}
           </div>
-          <h2 className="mb-2 text-2xl font-bold leading-5 tracking-tight">
+          <h2 className="mb-2 text-lg font-bold leading-5 tracking-tight md:text-2xl">
             {href ? (
               <Link href={href} aria-label={`Link to ${title}`}>
                 {title}
@@ -30,7 +30,9 @@ const Card = async ({ title, description, href, year, repo }) => {
           </h2>
         </div>
         <div className="flex flex-grow flex-col justify-between">
-          <p className="prose mb-3 max-w-none text-gray-900 dark:text-gray-300">{description}</p>
+          <p className="md:text-md prose mb-3 max-w-none text-sm text-gray-900 dark:text-gray-300">
+            {description}
+          </p>
           <div className="flex gap-3">
             <Link
               href={`https://github.com/nhanluongoe/${repo}`}
