@@ -18,13 +18,17 @@ export default function PostSection(props: PostSectionProps) {
           Latest Posts
         </h1>
         {posts.length > MAX_DISPLAY && (
-          <div className="flex justify-end text-base font-medium leading-6">
+          <div className="group flex justify-end text-base leading-6">
             <Link
               href="/blog"
               className="text-accent-500 hover:text-accent-600 dark:hover:text-accent-400"
               aria-label="All posts"
             >
-              All Posts &rarr;
+              all posts{' '}
+              <span className="inline-block translate-x-0 transition-transform group-hover:translate-x-1">
+                {' '}
+                &rsaquo;{' '}
+              </span>
             </Link>
           </div>
         )}

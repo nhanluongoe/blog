@@ -85,13 +85,13 @@ export default function ListLayoutWithTags({
           <div className="hidden h-full max-h-screen min-w-[280px] max-w-[280px] flex-wrap overflow-auto bg-transparent pt-5 sm:flex">
             <div className="px-6 py-4">
               {pathname.startsWith('/blog') ? (
-                <h3 className="font-bold uppercase text-accent-500">All Posts</h3>
+                <h3 className="font-bold text-accent-500">All posts</h3>
               ) : (
                 <Link
                   href={`/blog`}
-                  className="font-bold uppercase text-gray-900 hover:text-accent-500 dark:text-gray-100 dark:hover:text-accent-500"
+                  className="font-bold text-gray-900 hover:text-accent-500 dark:text-gray-100 dark:hover:text-accent-500"
                 >
-                  All Posts
+                  All posts
                 </Link>
               )}
               <ul>
@@ -105,7 +105,7 @@ export default function ListLayoutWithTags({
                       ) : (
                         <Link
                           href={`/tags/${slug(t)}`}
-                          className="px-3 py-2 text-sm font-medium uppercase text-gray-900 hover:text-accent-500 dark:text-gray-100 dark:hover:text-accent-500"
+                          className="px-3 py-2 text-sm font-medium lowercase text-gray-900 hover:text-accent-500 dark:text-gray-100 dark:hover:text-accent-500"
                           aria-label={`View posts tagged ${t}`}
                         >
                           {`${t} (${tagCounts[t]})`}
@@ -127,7 +127,7 @@ export default function ListLayoutWithTags({
                       <div className="space-y-3">
                         <div className="flex justify-between">
                           <div>
-                            <h2 className="mb-2 text-2xl font-bold leading-8 tracking-tight">
+                            <h2 className="mb-2 text-2xl leading-8 tracking-tight">
                               <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
                                 {title}
                               </Link>
