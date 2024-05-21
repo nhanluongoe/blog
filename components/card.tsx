@@ -19,7 +19,7 @@ const Card = async ({ title, description, href, year, repo }) => {
               </div>
             )}
           </div>
-          <h2 className="mb-2 text-lg font-bold leading-5 tracking-tight md:text-2xl">
+          <h2 className="mb-2 text-lg leading-5 tracking-tight md:text-xl">
             {href ? (
               <Link href={href} aria-label={`Link to ${title}`}>
                 {title}
