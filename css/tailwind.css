@@ -37,3 +37,11 @@ time {
 .katex-display {
   overflow: auto hidden;
 }
+
+code::before {
+  content: none !important;
+}
+
+code::after {
+  content: none !important;
+}

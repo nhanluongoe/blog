@@ -16,9 +16,9 @@ export default function PostCard(props: PostProps) {
   return (
     <Link
       href={`/blog/${slug}`}
-      className="group relative flex w-full cursor-pointer flex-col rounded-md border border-gray-200 border-opacity-60 bg-gray-50 p-3 dark:border-gray-900 dark:bg-gray-950"
+      className="group relative flex w-full cursor-pointer flex-col rounded-md border border-gray-200 border-opacity-60 bg-gray-50 p-3 dark:border-gray-800 dark:bg-gray-950"
     >
-      <h2 className="text-2xl font-bold text-gray-900 group-hover:text-accent-500 dark:text-gray-50">
+      <h2 className="text-xl text-gray-900 group-hover:text-accent-500 dark:text-gray-50">
         {title}
       </h2>
       <time
