@@ -9,9 +9,7 @@ export default function Projects() {
     <>
       <div className="">
         <div className="space-y-2 md:space-y-5">
-          <h1 className="md:leading-14 text-xl leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10 md:text-3xl">
-            Projects
-          </h1>
+          <h1 className="page-title">Projects</h1>
         </div>
         <div className="container py-2 md:py-8">
           <div className="-m-4 grid grid-cols-1 flex-wrap items-stretch md:grid-cols-2">

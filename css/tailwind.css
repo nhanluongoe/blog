@@ -45,3 +45,9 @@ code::before {
 code::after {
   content: none !important;
 }
+
+@layer components {
+  .page-title {
+    @apply text-xl tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl;
+  }
+}

@@ -14,9 +14,7 @@ export default function PostSection(props: PostSectionProps) {
   return (
     <div className="mt-12">
       <div className="mb-5 flex items-center justify-between">
-        <h1 className="text-xl tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl">
-          Latest Posts
-        </h1>
+        <h1 className="page-title">Latest Posts</h1>
         {posts.length > MAX_DISPLAY && (
           <div className="group flex justify-end text-base leading-6">
             <Link
