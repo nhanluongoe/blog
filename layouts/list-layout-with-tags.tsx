@@ -76,8 +76,8 @@ export default function ListLayoutWithTags({
   return (
     <>
       <div>
-        <div className="pb-6 pt-6">
-          <h1 className="md:leading-14 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:hidden sm:text-4xl sm:leading-10 md:text-6xl">
+        <div className="py-2 md:py-6">
+          <h1 className="md:leading-14 text-xl leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:hidden sm:text-4xl sm:leading-10 md:text-6xl md:font-extrabold">
             {title}
           </h1>
         </div>
@@ -85,11 +85,11 @@ export default function ListLayoutWithTags({
           <div className="hidden h-full max-h-screen min-w-[280px] max-w-[280px] flex-wrap overflow-auto bg-transparent pt-5 sm:flex">
             <div className="px-6 py-4">
               {pathname.startsWith('/blog') ? (
-                <h3 className="font-bold text-accent-500">All posts</h3>
+                <h3 className="text-accent-500">All posts</h3>
               ) : (
                 <Link
                   href={`/blog`}
-                  className="font-bold text-gray-900 hover:text-accent-500 dark:text-gray-100 dark:hover:text-accent-500"
+                  className="text-gray-900 hover:text-accent-500 dark:text-gray-100 dark:hover:text-accent-500"
                 >
                   All posts
                 </Link>
@@ -127,7 +127,7 @@ export default function ListLayoutWithTags({
                       <div className="space-y-3">
                         <div className="flex justify-between">
                           <div>
-                            <h2 className="mb-2 text-2xl leading-8 tracking-tight">
+                            <h2 className="text-md mb-2 leading-8 tracking-tight md:text-2xl">
                               <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
                                 {title}
                               </Link>
@@ -139,13 +139,13 @@ export default function ListLayoutWithTags({
                           <dl>
                             <dt className="sr-only">Published on</dt>
                             <dd className="text-base font-medium leading-6 text-gray-900 dark:text-gray-100">
-                              <time dateTime={date} className="text-sm text-accent-400">
+                              <time dateTime={date} className="text-xs text-accent-400 md:text-sm">
                                 {dateToMonthYear(date)}
                               </time>
                             </dd>
                           </dl>
                         </div>
-                        <div className="prose max-w-none text-gray-600 dark:text-gray-300">
+                        <div className="md:text-md prose max-w-none text-sm text-gray-600 dark:text-gray-300">
                           {summary}
                         </div>
                       </div>
