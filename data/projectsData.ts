@@ -8,13 +8,13 @@ const projectsData = [
     href: 'https://react-stacked-toast.vercel.app',
     year: 2023,
   },
-  // {
-  //   title: 'timeleft',
-  //   repo: 'timeleft',
-  //   description: 'A simple visualization of time left in your life.',
-  //   href: 'https://timethatleft.vercel.app',
-  //   year: 2024,
-  // },
+  {
+    title: 'ielts-writing-buddy',
+    repo: 'ielts-writing-buddy',
+    description: 'An AI-powered writing assistant for IELTS Writing.',
+    href: 'https://ielts-writing-assistant.vercel.app',
+    year: 2024,
+  },
 ]
 
 export default projectsData
