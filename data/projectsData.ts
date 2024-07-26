@@ -3,7 +3,7 @@ const projectsData = [
     title: 'react-stacked-toast',
     repo: 'react-stacked-toast',
     description: `A simple and flexible stacked toast library for React. It's easy to use and
-    customizable. 
+    customizable.
     `,
     href: 'https://react-stacked-toast.vercel.app',
     year: 2023,
@@ -13,6 +13,13 @@ const projectsData = [
     repo: 'ielts-writing-buddy',
     description: 'An AI-powered writing assistant for IELTS Writing.',
     href: 'https://ielts-writing-assistant.vercel.app',
+    year: 2024,
+  },
+  {
+    title: 'nextjs-boilerplate',
+    repo: 'nextjs-boilerplate',
+    description:
+      'Scalable folder structure boilerplate and starter-kit for Nextjs 14 with App Router support. Using TypeScript, TailwindCSS, NextAuth, Eslint, Prettier, Husky, Commitlint and Lint Staged',
     year: 2024,
   },
 ]
